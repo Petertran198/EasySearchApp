@@ -1,4 +1,5 @@
 using EasySearch.MicroServices.AccountApi.Data;
+using EasySearch.MicroServices.AccountApi.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -14,7 +15,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 //Adding Identity
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
 
 builder.Services.AddControllers();

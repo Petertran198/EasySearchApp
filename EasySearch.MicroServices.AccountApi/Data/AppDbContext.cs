@@ -1,15 +1,22 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using EasySearch.MicroServices.AccountApi.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace EasySearch.MicroServices.AccountApi.Data
 {
-    public class AppDbContext : IdentityDbContext<IdentityUser>
+    public class AppDbContext : IdentityDbContext<ApplicationUser>
 {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
 
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
         
     }
 }
