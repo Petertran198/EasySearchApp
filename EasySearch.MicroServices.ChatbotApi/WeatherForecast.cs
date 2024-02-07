@@ -1,4 +1,4 @@
-namespace EasySearch.MicroServices.AccountApi
+namespace EasySearch.MicroServices.ChatbotApi
 {
     public class WeatherForecast
     {

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace EasySearch.MicroServices.AccountApi.Controllers
+namespace EasySearch.MicroServices.ChatbotApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]

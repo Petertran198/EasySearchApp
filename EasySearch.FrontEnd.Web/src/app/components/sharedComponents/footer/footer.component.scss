@@ -1,0 +1,13 @@
+@import "/src/assets/globalStyles/main.scss";
+
+.footer {
+  background-color: $brand-color-light;
+
+  .footer-copyright {
+    background-color: $brand-color-dark;
+  }
+}
+
+.font-awesome-icon {
+  font-size: 1.5rem;
+}

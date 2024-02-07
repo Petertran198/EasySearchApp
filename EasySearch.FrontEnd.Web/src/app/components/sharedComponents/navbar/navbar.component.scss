@@ -1,0 +1,13 @@
+@import "/src/assets/globalStyles/main.scss";
+
+.navbar-brand {
+  color: $brand-color-light;
+  font-family: $brand-font-header;
+  .navbar-brand-text {
+    word-spacing: -1rem;
+    background: -webkit-linear-gradient($brand-color-light, $brand-color-light);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
