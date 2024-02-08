@@ -1,0 +1,56 @@
+@import "/src/assets/globalStyles/main.scss";
+
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$light-gray: #f8f9fa;
+
+.chatbox {
+  border: 1px solid $secondary-color;
+  border-radius: 8px;
+  height: 500px;
+  width: 50%;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+  background-color: $primary-color;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.chat-body {
+  padding: 10px;
+  max-height: 350px;
+}
+
+.message {
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.received {
+  background-color: #fff;
+}
+
+.sent {
+  background-color: $primary-color;
+  color: #fff;
+  align-self: flex-end;
+}
+
+.chat-footer {
+  display: flex;
+  padding: 10px;
+  background-color: $light-gray;
+}
+
+/// media query
+@media only screen and (max-width: 600px) {
+  .chatbox {
+    height: 400px;
+    width: 90%;
+  }
+}

@@ -6,9 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/sharedComponents/footer/footer.component';
 import { NavbarComponent } from './components/sharedComponents/navbar/navbar.component';
+import { ChatbotComponent } from './components/chatbotSystem/chatbot/chatbot.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, FooterComponent],
+  declarations: [AppComponent, NavbarComponent, FooterComponent, ChatbotComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
