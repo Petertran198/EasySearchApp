@@ -4,13 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { FooterComponent } from './components/sharedComponents/footer/footer.component';
-import { NavbarComponent } from './components/sharedComponents/navbar/navbar.component';
-import { ChatbotComponent } from './components/chatbotSystem/chatbot/chatbot.component';
+import { ChatBotSystemModule } from './chatbot-system/chatbot-system.module';
+import { FooterComponent } from './shared/sharedComponents/footer/footer.component';
+import { NavbarComponent } from './shared/sharedComponents/navbar/navbar.component';
+
+
+const components = [AppComponent, NavbarComponent, FooterComponent];
+
+
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, FooterComponent, ChatbotComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [...components],
+  imports: [BrowserModule, AppRoutingModule, ChatBotSystemModule],
   providers: [],
   bootstrap: [AppComponent],
 })

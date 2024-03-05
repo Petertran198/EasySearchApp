@@ -16,7 +16,7 @@ namespace EasySearch.MicroServices.ChatbotApi.Repositories
             _openAiAPIKey = openAiConfigurationKey.Value.Key;
         }
 
-
+        // Normal chatgpt 
         public async Task<string> getChatGptResult(string text)
         {
             var openAIKey = new OpenAI_API.OpenAIAPI(_openAiAPIKey);
@@ -33,6 +33,7 @@ namespace EasySearch.MicroServices.ChatbotApi.Repositories
         }
 
 
+        //Customized chatgpt
         public async Task<string> getChatGptCustomizedResult(ChatGptDto chatGptDto)
         {
             if(chatGptDto.Text == null){ throw new ArgumentNullException("chatGptDto: Text cannot be null."); }
@@ -52,5 +53,7 @@ namespace EasySearch.MicroServices.ChatbotApi.Repositories
             var response = await chat.GetResponseFromChatbotAsync();
             return response;
         }
+
+
     }
 }
