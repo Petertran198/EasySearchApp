@@ -8,11 +8,46 @@
 }
 
 .received {
-  background-color: #fff;
+  background-color: lighten($brand-color-dark, 40%);
+  position: relative;
 }
 
+
+.received:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  z-index: 1;
+  border-style: solid;
+  border-color: transparent lighten($brand-color-dark, 40%);
+  border-width: 14px 4px 14px 0;
+  top: 50%;
+  left: -4px;
+  margin-top: -14px;
+}
+
+
+
 .sent {
-  background-color: $primary-color;
+  background-color: lighten($brand-color-dark, 1%);
   color: #fff;
   align-self: flex-end;
+  position: relative;
 }
+
+.sent:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  z-index: 1;
+  border-style: solid;
+  border-color: transparent lighten($brand-color-dark, 1%);
+  border-width: 15px 0 15px 4px;
+  top: 50%;
+  right: -4px;
+  margin-top: -15px;
+}
+
+

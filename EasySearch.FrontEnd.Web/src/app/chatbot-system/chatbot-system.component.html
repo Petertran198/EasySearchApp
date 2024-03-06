@@ -1,11 +1,11 @@
 <div class="d-flex justify-content-center align-items-center h-100">
     <div class="chatbox">
         <div class="chat-header">
-            <h5 class="mb-0">My AI Assistant</h5>
+            <h5 class="mb-0">My AI Travel Assistant</h5>
         </div>
         <div class="chat-body">
             <message *ngFor="let message of this.chatbotService.allMessages in" [message]="message"></message>
-            <div class="chat-footer fixed-footer">
+            <div class="chat-footer ">
                 <input type="text"
                        class="form-control"
                        placeholder="Type your message..." />

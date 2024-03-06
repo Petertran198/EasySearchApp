@@ -2,6 +2,7 @@
 
 
 .chatbox {
+  position:relative;
   border: 1px solid $secondary-color;
   border-radius: 8px;
   height: 500px;
@@ -25,6 +26,10 @@
 
 
 .chat-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   padding: 10px;
   background-color: $light-gray;
