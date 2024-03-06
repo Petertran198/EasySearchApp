@@ -1,1 +1,1 @@
-export * from './chatGptDto'
+export * from './chat-gpt-dto'

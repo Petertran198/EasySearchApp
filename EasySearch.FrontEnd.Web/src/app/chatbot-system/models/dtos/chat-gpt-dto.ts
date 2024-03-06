@@ -17,3 +17,16 @@ export class ChatGptDto {
     this.geoLocation = geoLocation;
   }
 }
+
+
+
+
+export class MessageDto {
+  type: string = '';
+  chatInfo: ChatGptDto | undefined;
+
+  constructor(type: string, chatInfo: ChatGptDto | undefined) {
+    this.type = type;
+    this.chatInfo = chatInfo;
+  }
+}
