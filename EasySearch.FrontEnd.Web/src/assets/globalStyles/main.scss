@@ -17,6 +17,11 @@ h6 {
   margin-bottom: 0.5em;
 }
 
+body {
+  height: 100%;
+}
+
+/***************************************************************Custom **************************************************************************/
 /* Easy-to-read links */
 a {
   color: $brand-color-dark;
@@ -25,16 +30,13 @@ a {
   }
 }
 
-/* Height and Sizing */
 
-// .h-100vh {
-//   height: 100vh;
-// }
+#cloud-bg-color {
+  background: -webkit-linear-gradient(#4A4A4A, #738185, #B3DAE6, white);
+  background: -moz-linear-gradient(#4A4A4A, #738185, #B3DAE6, white);
+  background: linear-gradient(#4A4A4A, #738185, #B3DAE6, white);
+}
 
-// .center-screen {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   margin-right: -50%;
-//   transform: translate(-50%, -50%);
-// }
+
+
+

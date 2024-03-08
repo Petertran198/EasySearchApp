@@ -1,8 +1,8 @@
 @import "/src/assets/globalStyles/main.scss";
 
 .footer {
+  z-index: -1;
   background-color: $brand-color-light;
-
   .footer-copyright {
     background-color: $brand-color-dark;
   }
@@ -11,3 +11,5 @@
 .font-awesome-icon {
   font-size: 1.5rem;
 }
+
+
