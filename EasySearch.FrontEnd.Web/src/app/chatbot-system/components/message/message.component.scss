@@ -5,30 +5,20 @@
   padding: 8px;
   margin-bottom: 10px;
   border-radius: 8px;
+  word-wrap: break-word;
 }
 
-.received {
+
+
+.sent {
   background-color: lighten($brand-color-dark, 40%);
   position: relative;
   text-align: right;
+  width: 100%;
+  margin-left: auto;
+  width: auto;
 }
-
-
 .sent:before {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 0;
-  z-index: 1;
-  border-style: solid;
-  border-color: transparent lighten($brand-color-dark, 40%);
-  border-width: 14px 4px 14px 0;
-  top: 50%;
-  left: -4px;
-  margin-top: -14px;
-}
-
-.received:before {
   content: "";
   position: absolute;
   display: block;
@@ -42,15 +32,15 @@
   margin-top: -15px;
 }
 
-.sent {
+.received {
   text-align: left;
   background-color: lighten($brand-color-dark, 1%);
   color: #fff;
-  align-self: flex-end;
   position: relative;
+  width: auto;
 }
 
-.sent:before {
+.received:before {
   content: '';
   position: absolute;
   display: block;
