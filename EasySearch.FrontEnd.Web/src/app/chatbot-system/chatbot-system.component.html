@@ -1,21 +1,35 @@
-
 <div class="d-flex flex-column align-items-center m-5">
-    <div class="chatbox m-2">
-        <div class="chat-header">
-            <h5 class="mb-0">My AI Travel Assistant</h5>
-        </div>
-        <div class="chat-body">
-            <message *ngFor="let message of this.chatbotService.allMessages in" [message]="message"></message>
-            <div class="chat-footer ">
-                <input type="text"
-                       class="form-control"
-                       placeholder="Ask a question for your travels.." [(ngModel)]="message" />
-                <button class="btn btn-secondary mx-1">
-                    <i class="fa-solid fa-microphone"></i>
-                </button>
-                <button class="btn btn-primary mx-1" (click)="sendMessage()" [disabled]="!message">
-                    Send
-                </button>
-        </div>
+  <div class="chatbox m-2">
+    <div class="chat-header">
+      <h5 class="mb-0">My AI Travel Assistant</h5>
     </div>
+    <div class="chat-body">
+      <message
+        *ngFor="let message of this.chatbotService.allMessages"
+        [message]="message"
+      ></message>
+      <div class="chat-footer">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Ask a question for your travels.."
+          [(ngModel)]="message"
+        />
+        <button
+          class="btn btn-secondary mx-1"
+          (click)="this.speechRecognitionService.handleSpeechToText()"
+          [class.btn-danger]="this.speechRecognitionService.isStarted"
+        >
+          <i class="fa-solid fa-microphone"></i>
+        </button>
+        <button
+          class="btn btn-primary mx-1"
+          (click)="sendMessage()"
+          [disabled]="!message"
+        >
+          Send
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
