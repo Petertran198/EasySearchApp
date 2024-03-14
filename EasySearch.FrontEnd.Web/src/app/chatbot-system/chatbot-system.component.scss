@@ -4,7 +4,7 @@
   position: relative;
   border: 1px solid $secondary-color;
   border-radius: 8px;
-  height: 500px;
+  height: 550px;
   width: 50%;
   max-width: 700px;
   overflow-y: auto;
@@ -13,8 +13,8 @@
 }
 
 .chat-header {
-  background: lighten($brand-color-dark, 15%);
-  color: #fff;
+  word-spacing: -3px;
+  color: #00134d;
   padding: 10px;
   text-align: center;
 }
@@ -23,7 +23,6 @@
   padding: 10px;
   max-height: 350px;
 }
-
 
 .chat-footer {
   position: absolute;
@@ -35,10 +34,19 @@
   background-color: $light-gray;
 }
 
+button {
+  width: 50%;
+  max-width: 700px;
+  z-index: 999;
+}
+
 /// media query
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
   .chatbox {
     height: 400px;
+    width: 90%;
+  }
+  button {
     width: 90%;
   }
 }

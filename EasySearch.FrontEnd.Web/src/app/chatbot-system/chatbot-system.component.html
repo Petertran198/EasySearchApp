@@ -1,7 +1,7 @@
 <div class="d-flex flex-column align-items-center m-5">
   <div class="chatbox m-2">
     <div class="chat-header">
-      <h5 class="mb-0">My AI Travel Assistant</h5>
+      <h5 class="mb-0">Travel Assistant</h5>
     </div>
     <div class="chat-body">
       <message
@@ -9,27 +9,27 @@
         [message]="message"
       ></message>
       <div class="chat-footer">
-        <input
-          type="text"
+        <textarea
           class="form-control"
+          rows="3"
           placeholder="Ask a question for your travels.."
           [(ngModel)]="message"
-        />
-        <button
-          class="btn btn-secondary mx-1"
-          (click)="this.speechRecognitionService.handleSpeechToText()"
-          [class.btn-danger]="this.speechRecognitionService.isStarted"
-        >
-          <i class="fa-solid fa-microphone"></i>
-        </button>
-        <button
-          class="btn btn-primary mx-1"
-          (click)="sendMessage()"
-          [disabled]="!message"
-        >
-          Send
-        </button>
+        ></textarea>
       </div>
     </div>
   </div>
+  <button
+    class="btn btn-block btn-secondary"
+    (click)="this.speechRecognitionService.handleSpeechToText()"
+    [class.btn-danger]="this.speechRecognitionService.isStarted"
+  >
+    <i class="fa-solid fa-microphone"></i>
+  </button>
+  <button
+    class="btn btn-block btn-primary"
+    (click)="sendMessage()"
+    [disabled]="!message"
+  >
+    {{ !message ? "Enter a prompt" : "Ask Question" }}
+  </button>
 </div>
