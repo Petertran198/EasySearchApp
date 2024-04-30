@@ -7,7 +7,7 @@ import { SpeechRecognitionService } from './services/speech-recognition.service'
   templateUrl: './chatbot-system.component.html',
   styleUrls: ['./chatbot-system.component.scss'],
 })
-export class ChatbotComponent implements OnInit {
+export class ChatbotSystemComponent implements OnInit {
   public message: string = '';
 
   constructor(

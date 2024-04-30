@@ -19,6 +19,7 @@
   <ItemGroup>
     <Folder Include="src\app\chatbot-system\components\message\" />
     <Folder Include="src\app\chatbot-system\services\" />
+    <Folder Include="src\app\travelblog-system\" />
     <Folder Include="src\app\shared\configurations\" />
   </ItemGroup>
 </Project>

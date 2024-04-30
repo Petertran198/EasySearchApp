@@ -1,0 +1,13 @@
+@import "/src/assets/globalStyles/main.scss";
+
+.login-signup-form {
+  width: 45%;
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .login-signup-form {
+    width: 100%;
+  }
+}

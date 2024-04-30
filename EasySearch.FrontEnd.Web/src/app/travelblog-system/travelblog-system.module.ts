@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TravelBlogSystemRoutingModule } from './travel-blog-system.routing.module';
 
-import { ChatbotSystemComponent } from './chatbot-system.component';
-import { MessageComponent } from './components'
+import { TravelBlogSystemComponent } from './travelblog-system.component';
 
-const components = [ChatbotSystemComponent, MessageComponent];
-const modules = [CommonModule, FormsModule];
+const components = [TravelBlogSystemComponent];
+const modules = [CommonModule, FormsModule, TravelBlogSystemRoutingModule];
 
 @NgModule({
   // Add your components, directives, and pipes here
@@ -16,4 +16,4 @@ const modules = [CommonModule, FormsModule];
   // Export components, directives, and pipes if needed
   exports: [...components], 
 })
-export class ChatBotSystemModule { }
+export class TravelBlogSystemModule { }
