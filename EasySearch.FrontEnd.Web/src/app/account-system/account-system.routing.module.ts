@@ -4,19 +4,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountSystemComponent } from './account-system.component';
 
-const routes: Routes = [
-  {
-    path: 'account',
-    component: AccountSystemComponent,
-    children: [
-      { path: '', redirectTo: '', pathMatch: 'full' },
-      { path: '', component: AccountSystemComponent },
-    ]
-  }
-];
+const routes: Routes = [{ path: '', component: AccountSystemComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AccountSystemRoutingModule { }
+export class AccountSystemRoutingModule {}

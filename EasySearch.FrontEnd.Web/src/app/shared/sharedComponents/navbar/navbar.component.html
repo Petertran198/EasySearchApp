@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark  p-3">
+<nav class="navbar navbar-expand-lg navbar-dark p-3">
   <a class="navbar-brand" href="#">
     <span class="mx-1 navbar-brand-text">EasySearch</span>
-   <!--- <img
+    <!--- <img
       src="../../../assets/images/EasySearchLogo.png"
       alt="EasySearch Logo"
       height="35"
@@ -20,16 +20,25 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Home<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/blog']" routerLinkActive="active">Blog</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/account']" routerLinkActive="active">Account</a>
-          </li>
-      </ul>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active"
+          >Home<span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/blog']" routerLinkActive="active"
+          >Blog</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['/account']"
+          routerLinkActive="active"
+          >Account</a
+        >
+      </li>
+    </ul>
   </div>
 </nav>

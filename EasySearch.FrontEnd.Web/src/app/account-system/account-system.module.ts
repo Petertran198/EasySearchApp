@@ -14,6 +14,6 @@ const modules = [CommonModule, FormsModule, AccountSystemRoutingModule];
   // Add required Angular modules here
   imports: [...modules],
   // Export components, directives, and pipes if needed
-  exports: [...components], 
+  exports: [...components],
 })
-export class AccountSystemModule { }
+export class AccountSystemModule {}

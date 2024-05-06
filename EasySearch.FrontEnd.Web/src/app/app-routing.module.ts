@@ -1,18 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TravelBlogSystemComponent } from 'src/app/travelblog-system/travelblog-system.component';
-import { BlogDetailPageComponent } from 'src/app/travelblog-system/components';
-
 import { ChatbotSystemComponent } from 'src/app/chatbot-system/chatbot-system.component';
-import { AccountSystemComponent } from 'src/app/account-system/account-system.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' }, 
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: ChatbotSystemComponent },
-  { path: 'blog', component: BlogDetailPageComponent },
-  { path: 'account', component: AccountSystemComponent },
-
+  {
+    path: 'blog',
+    loadChildren: () =>
+      import('./travelblog-system/travelblog-system.module').then(
+        (m) => m.TravelBlogSystemModule
+      ),
+  },
+  {
+    path: 'account',
+    loadChildren: () =>
+      import('./account-system/account-system.module').then(
+        (m) => m.AccountSystemModule
+      ),
+  },
 ];
 
 @NgModule({

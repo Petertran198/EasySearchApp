@@ -7,11 +7,7 @@ import { Component, OnInit } from '@angular/core';
 export class TravelBlogSystemComponent implements OnInit {
   public message: string = '';
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
-
+  ngOnInit(): void {}
 }

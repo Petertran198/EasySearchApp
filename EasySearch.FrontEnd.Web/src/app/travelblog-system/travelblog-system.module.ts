@@ -6,8 +6,6 @@ import { TravelBlogSystemRoutingModule } from './travel-blog-system.routing.modu
 import { TravelBlogSystemComponent } from './travelblog-system.component';
 import { BlogDetailPageComponent } from './components';
 
-
-
 const components = [TravelBlogSystemComponent, BlogDetailPageComponent];
 const modules = [CommonModule, FormsModule, TravelBlogSystemRoutingModule];
 
@@ -17,6 +15,6 @@ const modules = [CommonModule, FormsModule, TravelBlogSystemRoutingModule];
   // Add required Angular modules here
   imports: [...modules],
   // Export components, directives, and pipes if needed
-  exports: [...components], 
+  exports: [...components],
 })
-export class TravelBlogSystemModule { }
+export class TravelBlogSystemModule {}
