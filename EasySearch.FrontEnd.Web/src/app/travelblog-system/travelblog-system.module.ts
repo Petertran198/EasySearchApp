@@ -4,8 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { TravelBlogSystemRoutingModule } from './travel-blog-system.routing.module';
 
 import { TravelBlogSystemComponent } from './travelblog-system.component';
+import { BlogDetailPageComponent } from './components';
 
-const components = [TravelBlogSystemComponent];
+
+
+const components = [TravelBlogSystemComponent, BlogDetailPageComponent];
 const modules = [CommonModule, FormsModule, TravelBlogSystemRoutingModule];
 
 @NgModule({

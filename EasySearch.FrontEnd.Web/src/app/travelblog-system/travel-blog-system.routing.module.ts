@@ -3,16 +3,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TravelBlogSystemComponent } from './travelblog-system.component';
+import { BlogDetailPageComponent } from './components';
 
 const routes: Routes = [
-  {
-    path: 'blog',
-    component: TravelBlogSystemComponent,
-    children: [
-      { path: '', redirectTo: '', pathMatch: 'full' },
-      { path: '', component: TravelBlogSystemComponent },
-    ]
-  }
+    { path: 'a', component: BlogDetailPageComponent },
+
 ];
 
 @NgModule({
