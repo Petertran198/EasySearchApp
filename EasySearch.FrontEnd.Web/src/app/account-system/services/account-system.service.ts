@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject, Subscription } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { AppConfigUrl } from 'src/app/shared/configurations/api-url-config';
-import { LoginRequestDto, RegistrationRequestDto } from '../models/dtos/auth-dto';
+import { LoginRequestDto, LoginResponseDto, RegistrationRequestDto } from '../models/dtos/auth-dto';
 
 @Injectable({
   providedIn: 'root',
@@ -27,21 +27,22 @@ export class AccountSystemService {
     }
   }
 
-  public register(registrationRequestDto: RegistrationRequestDto) {
+  //, { responseType: 'text'}
+  public register(registrationRequestDto: RegistrationRequestDto): Observable<string | null> {
     var url = AppConfigUrl.AccountSystemUrl + 'api/Auth/Register';
-    this.httpClient.post(url, registrationRequestDto).subscribe();
+    return this.httpClient.post<string | null>(url, registrationRequestDto);
 
   }
 
-  public login(loginRequestDto: LoginRequestDto) {
+  public login(loginRequestDto: LoginRequestDto): Observable<LoginResponseDto> {
     var url = AppConfigUrl.AccountSystemUrl + 'api/Auth/Login';
-    this.httpClient.post(url, loginRequestDto).subscribe();
+    return this.httpClient.post<LoginResponseDto>(url, loginRequestDto);
 
   }
 
-  public assignRole(registrationRequestDto: RegistrationRequestDto) {
+  public assignRole(registrationRequestDto: RegistrationRequestDto): Observable<boolean> {
     var url = AppConfigUrl.AccountSystemUrl + 'api/Auth/AssignRole';
-    this.httpClient.post(url, registrationRequestDto).subscribe();
+    return this.httpClient.post<boolean>(url, registrationRequestDto);
 
   }
   
