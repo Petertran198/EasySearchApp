@@ -4,8 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { AccountSystemRoutingModule } from './account-system.routing.module';
 
 import { AccountSystemComponent } from './account-system.component';
+import { EditProfilePageComponent } from './components';
 
-const components = [AccountSystemComponent];
+const components = [AccountSystemComponent, EditProfilePageComponent];
 const modules = [CommonModule, FormsModule, AccountSystemRoutingModule];
 
 @NgModule({

@@ -2,15 +2,15 @@
   <!-- Account page navigation-->
   <nav class="nav nav-borders">
     <a
-      class="nav-link active ms-0"
-      href="https://www.bootdey.com/snippets/view/bs5-edit-profile-account-details"
-      target="__blank"
-      >Profile</a
+      class="nav-link"
+      (click)="toggleForm('Profile', 1)"
+      [class.active]="activeFormTab === 1"
+      >Account</a
     >
     <a
       class="nav-link"
-      href="https://www.bootdey.com/snippets/view/bs5-profile-security-page"
-      target="__blank"
+      (click)="toggleForm('Personalization', 2)"
+      [class.active]="activeFormTab === 2"
       >Personalization</a
     >
   </nav>
@@ -38,124 +38,200 @@
         </div>
       </div>
     </div>
-    <div class="col-xl-8">
-      <!-- Account details card-->
-      <div class="card mb-4">
-        <div class="card-header">Account Details</div>
-        <div class="card-body">
-          <form>
-            <!-- Form Group (username)-->
-            <div class="mb-3">
-              <label class="small mb-1" for="inputUsername"
-                >Username (how your name will appear to other users on the
-                site)</label
-              >
-              <input
-                class="form-control"
-                id="inputUsername"
-                type="text"
-                placeholder="Enter your username"
-                value="username"
-              />
-            </div>
-            <!-- Form Row-->
-            <div class="row gx-3 mb-3">
-              <!-- Form Group (first name)-->
-              <div class="col-md-6">
-                <label class="small mb-1" for="inputFirstName"
-                  >First name</label
+    <ng-container *ngIf="this.formTab === 'Profile'">
+      <div class="col-xl-8">
+        <!-- Account details card-->
+        <div class="card mb-4">
+          <div class="card-header">Account Details</div>
+          <div class="card-body">
+            <form>
+              <!-- Form Group (username)-->
+              <div class="mb-3">
+                <label class="small mb-1" for="inputUsername"
+                  >Username (how your name will appear to other users on the
+                  site)</label
                 >
                 <input
                   class="form-control"
-                  id="inputFirstName"
+                  id="inputUsername"
                   type="text"
-                  placeholder="Enter your first name"
-                  value="Valerie"
+                  placeholder="Enter your username"
+                  value="username"
                 />
               </div>
-              <!-- Form Group (last name)-->
-              <div class="col-md-6">
-                <label class="small mb-1" for="inputLastName">Last name</label>
-                <input
-                  class="form-control"
-                  id="inputLastName"
-                  type="text"
-                  placeholder="Enter your last name"
-                  value="Luna"
-                />
+              <!-- Form Row-->
+              <div class="row gx-3 mb-3">
+                <!-- Form Group (first name)-->
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputFirstName"
+                    >First name</label
+                  >
+                  <input
+                    class="form-control"
+                    id="inputFirstName"
+                    type="text"
+                    placeholder="Enter your first name"
+                    value="Valerie"
+                  />
+                </div>
+                <!-- Form Group (last name)-->
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputLastName"
+                    >Last name</label
+                  >
+                  <input
+                    class="form-control"
+                    id="inputLastName"
+                    type="text"
+                    placeholder="Enter your last name"
+                    value="Luna"
+                  />
+                </div>
               </div>
-            </div>
-            <!-- Form Row        -->
-            <div class="row gx-3 mb-3">
-              <!-- Form Group (organization name)-->
-              <div class="col-md-6">
-                <label class="small mb-1" for="inputOrgName"
-                  >Organization name</label
+              <!-- Form Row        -->
+              <div class="row gx-3 mb-3">
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputOrgName">Ethnicity</label>
+                  <input class="form-control" id="inputOrgName" type="text" />
+                </div>
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputLocation">Location</label>
+                  <input
+                    class="form-control"
+                    id="inputLocation"
+                    type="text"
+                    placeholder="Enter your location"
+                    value="San Francisco, CA"
+                  />
+                </div>
+              </div>
+              <!-- Form Group (email address)-->
+              <div class="mb-3">
+                <label class="small mb-1" for="inputEmailAddress"
+                  >Email address</label
                 >
                 <input
                   class="form-control"
-                  id="inputOrgName"
-                  type="text"
-                  placeholder="Enter your organization name"
-                  value="Start Bootstrap"
+                  id="inputEmailAddress"
+                  type="email"
+                  placeholder="Enter your email address"
+                  value="name@example.com"
                 />
               </div>
-              <!-- Form Group (location)-->
-              <div class="col-md-6">
-                <label class="small mb-1" for="inputLocation">Location</label>
-                <input
-                  class="form-control"
-                  id="inputLocation"
-                  type="text"
-                  placeholder="Enter your location"
-                  value="San Francisco, CA"
-                />
+              <!-- Form Row-->
+              <div class="row gx-3 mb-3">
+                <!-- Form Group (phone number)-->
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputPhone"
+                    >Phone number</label
+                  >
+                  <input
+                    class="form-control"
+                    id="inputPhone"
+                    type="tel"
+                    placeholder="Enter your phone number"
+                    value="555-123-4567"
+                  />
+                </div>
+                <!-- Form Group (birthday)-->
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputBirthday">Birthday</label>
+                  <input
+                    class="form-control"
+                    id="inputBirthday"
+                    type="text"
+                    name="birthday"
+                    placeholder="Enter your birthday"
+                    value="06/10/1988"
+                  />
+                </div>
               </div>
-            </div>
-            <!-- Form Group (email address)-->
-            <div class="mb-3">
-              <label class="small mb-1" for="inputEmailAddress"
-                >Email address</label
-              >
-              <input
-                class="form-control"
-                id="inputEmailAddress"
-                type="email"
-                placeholder="Enter your email address"
-                value="name@example.com"
-              />
-            </div>
-            <!-- Form Row-->
-            <div class="row gx-3 mb-3">
-              <!-- Form Group (phone number)-->
-              <div class="col-md-6">
-                <label class="small mb-1" for="inputPhone">Phone number</label>
-                <input
-                  class="form-control"
-                  id="inputPhone"
-                  type="tel"
-                  placeholder="Enter your phone number"
-                  value="555-123-4567"
-                />
-              </div>
-              <!-- Form Group (birthday)-->
-              <div class="col-md-6">
-                <label class="small mb-1" for="inputBirthday">Birthday</label>
-                <input
-                  class="form-control"
-                  id="inputBirthday"
-                  type="text"
-                  name="birthday"
-                  placeholder="Enter your birthday"
-                  value="06/10/1988"
-                />
-              </div>
-            </div>
-            <!-- Save changes button-->
-            <button class="btn btn-primary" type="button">Save changes</button>
-          </form>
+              <!-- Save changes button-->
+              <button class="btn btn-primary" type="button">
+                Save changes
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </ng-container>
+    <ng-container *ngIf="this.formTab === 'Personalization'">
+      <div class="col-xl-8">
+        <!-- Account details card-->
+        <div class="card mb-4">
+          <div class="card-header">Personalization</div>
+          <div class="card-body">
+            <form>
+              <!-- Form Group Goals-->
+              <div class="mb-3">
+                <label class="small mb-1" for="inputGoals">Goals</label>
+                <input class="form-control" id="inputGoals" type="text" />
+              </div>
+              <!-- Form Row-->
+              <div class="row gx-3 mb-3">
+                <!-- Form Group (Personality Type)-->
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputPersonalityType"
+                    >Personality Type</label
+                  >
+                  <input
+                    class="form-control"
+                    id="inputPersonalityType"
+                    type="text"
+                  />
+                </div>
+                <!-- Form Group (Openess to Experience)-->
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputOpenessToNewExperience"
+                    >Openess to New Experience</label
+                  >
+                  <input
+                    class="form-control"
+                    id="inputOpenessToNewExperience"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <!-- Form Group Interest and hobbies-->
+              <div class="mb-3">
+                <label class="small mb-1" for="inputInterest"
+                  >Interest and hobbies</label
+                >
+                <input class="form-control" id="inputInterest" type="text" />
+              </div>
+              <!-- Form Row-->
+              <div class="row gx-3 mb-3">
+                <!-- Form Group (Communication Type)-->
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputCommunicationType"
+                    >Communication Type</label
+                  >
+                  <input
+                    class="form-control"
+                    id="inputCommunicationType"
+                    type="text"
+                  />
+                </div>
+                <!-- Form Group (Decision making type )-->
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputDecisionMakingType"
+                    >Decision Making Type</label
+                  >
+                  <input
+                    class="form-control"
+                    id="inputDecisionMakingType"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <!-- Save changes button-->
+              <button class="btn btn-primary" type="button">
+                Save changes
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </ng-container>
   </div>
 </div>

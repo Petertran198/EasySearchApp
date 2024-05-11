@@ -3,7 +3,7 @@ export class LoginRequestDto {
   public userName: string;
   public password: string;
 
-  constructor(userName: string, password: string) {
+  constructor(userName: string = "", password: string = "") {
     this.userName = userName;
     this.password = password;
   }
@@ -32,7 +32,7 @@ export class RegistrationRequestDto {
   public password: string;
   public roleName?: string;
 
-  constructor(email: string, name: string, phoneNumber: string, password: string, roleName?: string) {
+  constructor(email: string = "", name: string = "", phoneNumber: string = "", password: string = "", roleName?: string ) {
     this.email = email;
     this.name = name;
     this.phoneNumber = phoneNumber;
@@ -49,7 +49,7 @@ export class UserDto {
   public name: string;
   public phoneNumber: string;
 
-  constructor(id: string, email: string, name: string, phoneNumber: string) {
+  constructor(id: string = "", email: string ="", name: string = "", phoneNumber: string = "") {
     this.id = id;
     this.email = email;
     this.name = name;

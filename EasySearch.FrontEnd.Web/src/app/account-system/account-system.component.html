@@ -19,13 +19,13 @@
                 <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
                     <form>
                         <div class="form-group">
-                            <input type="email" name="email" class="form-control" id="email" placeholder="Email" required autofocus>
+                            <input type="email" [(ngModel)]="this.loginRequestDto.userName" name="email" class="form-control" id="email" placeholder="Email/Username" required autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                            <input type="password" name="password" [(ngModel)]="this.loginRequestDto.password"  class="form-control" id="password" placeholder="Password" required>
                         </div>
                         <div class="text-center pt-4">
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="submit" class="btn btn-primary" (click)="this.login(this.loginRequestDto)">Login</button>
                         </div>
                         <div class="text-center pt-3">
                             <a class="btn btn-link text-primary" href="#">Forgot Your Password?</a>
@@ -36,25 +36,19 @@
                 <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="pills-register-tab">
                     <form>
                         <div class="form-group">
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Name" required>
+                            <input type="text" name="name" [(ngModel)]="this.registrationRequestDto.name"  id="name" class="form-control" placeholder="Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="username" id="name" class="form-control" placeholder="Username" required autofocus>
+                            <input type="text" name="email" [(ngModel)]="this.registrationRequestDto.email" id="email" class="form-control" placeholder="Email/Username" required autofocus>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
+                            <input type="text" name="phone" [(ngModel)]="this.registrationRequestDto.phoneNumber" id="phone" class="form-control" placeholder="Phone Number">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="phone" id="phone" class="form-control" placeholder="Phone Number">
-                        </div>
-                        <div class="form-group">
-                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" name="password_confirmation" id="password-confirm" class="form-control" placeholder="Confirm password" required>
+                            <input type="password" name="password" [(ngModel)]="this.registrationRequestDto.password" id="password" class="form-control" placeholder="Password" required>
                         </div>
                         <div class="text-center pt-2 pb-1">
-                            <button type="submit" class="btn btn-primary">Register</button>
+                            <button type="submit" class="btn btn-primary" (click) ="this.register(this.registrationRequestDto)">Register</button>
                         </div>
                     </form>
                 </div>
