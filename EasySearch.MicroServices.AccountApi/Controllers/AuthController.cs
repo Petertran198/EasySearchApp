@@ -89,5 +89,8 @@ namespace EasySearch.MicroServices.AccountApi.Controllers
             }
             return r;
         }
+
+
+        // Make a HttpGet that returns UserDto of logged in User for User Info
     }
 }
