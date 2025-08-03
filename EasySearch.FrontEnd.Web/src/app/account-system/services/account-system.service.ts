@@ -1,5 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject, Subscription } from 'rxjs';
+import {
+  Observable,
+  Subject,
+  Subscription,
+  BehaviorSubject,
+  tap,
+  catchError,
+} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { AppConfigUrl } from 'src/app/shared/configurations/api-url-config';
 import {
@@ -14,8 +21,12 @@ import {
 export class AccountSystemService {
   public subscriptions: { [property_name: string]: Subscription } = {};
 
-  constructor(private httpClient: HttpClient) {}
+  private currentUserSubject: BehaviorSubject<LoginResponseDto | null> =
+    new BehaviorSubject<LoginResponseDto | null>(null);
+  public currentUser: Observable<LoginResponseDto | null> =
+    this.currentUserSubject.asObservable();
 
+  constructor(private httpClient: HttpClient) {}
 
   public addSubscription<T>(property_name: string, subscription: Subscription) {
     this.subscriptions[property_name] = subscription;
@@ -30,7 +41,9 @@ export class AccountSystemService {
   }
 
   //, { responseType: 'text'}
-  public register(registrationRequestDto: RegistrationRequestDto): Observable<string | null> {
+  public register(
+    registrationRequestDto: RegistrationRequestDto
+  ): Observable<string | null> {
     var url = AppConfigUrl.AccountSystemUrl + 'api/Auth/Register';
     // return this.httpClient.post(url, registrationRequestDto);
     return this.httpClient.post<string | null>(url, registrationRequestDto);
@@ -38,7 +51,11 @@ export class AccountSystemService {
 
   public login(loginRequestDto: LoginRequestDto): Observable<LoginResponseDto> {
     var url = AppConfigUrl.AccountSystemUrl + 'api/Auth/Login';
-    return this.httpClient.post<LoginResponseDto>(url, loginRequestDto);
+    return this.httpClient.post<LoginResponseDto>(url, loginRequestDto).pipe(
+      tap((x) => {
+        this.currentUserSubject.next(x);
+      })
+    );
   }
 
   public assignRole(
@@ -47,6 +64,4 @@ export class AccountSystemService {
     var url = AppConfigUrl.AccountSystemUrl + 'api/Auth/AssignRole';
     return this.httpClient.post<boolean>(url, registrationRequestDto);
   }
-
-
 }

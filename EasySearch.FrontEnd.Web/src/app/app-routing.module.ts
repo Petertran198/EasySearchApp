@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ChatbotSystemComponent } from 'src/app/chatbot-system/chatbot-system.component';
+import { NotAuthorizeComponent } from './shared/sharedComponents/NotAuthorize/not-authorize.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
         (m) => m.AccountSystemModule
       ),
   },
+  { path: 'not-authorize', component: NotAuthorizeComponent },
 ];
 
 @NgModule({
