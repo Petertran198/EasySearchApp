@@ -23,6 +23,22 @@ export class LoginResponseDto {
 }
 
 
+export class UserDto {
+  // For everything we need of User  
+  public id: string;
+  public email: string;
+  public name: string;
+  public phoneNumber: string;
+
+  constructor(id: string = "", email: string = "", name: string = "", phoneNumber: string = "") {
+    this.id = id;
+    this.email = email;
+    this.name = name;
+    this.phoneNumber = phoneNumber;
+  }
+}
+
+
 
 export class RegistrationRequestDto {
   //For everything we need for the user registration request 
@@ -42,17 +58,3 @@ export class RegistrationRequestDto {
 }
 
 
-export class UserDto {
-  // For everything we need of User  
-  public id: string;
-  public email: string;
-  public name: string;
-  public phoneNumber: string;
-
-  constructor(id: string = "", email: string ="", name: string = "", phoneNumber: string = "") {
-    this.id = id;
-    this.email = email;
-    this.name = name;
-    this.phoneNumber = phoneNumber;
-  }
-}

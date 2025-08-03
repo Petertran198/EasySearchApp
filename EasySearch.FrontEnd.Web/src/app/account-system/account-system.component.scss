@@ -1,10 +1,15 @@
 @import "/src/assets/globalStyles/main.scss";
 
 .login-signup-form {
-  width: 45%;
+  width: 650px;
+  height: 400px;
 }
 
-
+.error-message {
+  color: #dc3545;
+  font-size: 0.875em;
+  margin-top: 0.25rem;
+}
 
 @media screen and (max-width: 900px) {
   .login-signup-form {
