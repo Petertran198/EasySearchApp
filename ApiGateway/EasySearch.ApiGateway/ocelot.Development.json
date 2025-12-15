@@ -1,0 +1,57 @@
+﻿/*
+  Design Choice. 
+   1. Client calls Auth Microservice
+      - Sends credentials (username/password)
+      - Auth Microservice returns a JWT
+
+   2. Client calls another API through API Gateway
+      - Sends JWT in the Authorization: Bearer header
+
+   3. API Gateway validates the JWT
+      - Checks signature, expiration, and claims
+      - Rejects request if invalid
+
+   4. If JWT is valid, Gateway forwards request to the downstream service
+
+   5. Downstream service processes the request and returns the response
+      - Gateway forwards the response back to the client
+*/
+{
+  "Routes": [
+    //Example of Get Route maping -  curl https://localhost:7777/ocelot/WeatherForecast -k
+    {
+      // HTTP method allowed (GET only)
+      "UpstreamHttpMethod": [ "Get" ],
+      // URL the client calls on the API Gateway
+      "UpstreamPathTemplate": "/ocelot/WeatherForecast",
+      // URL the gateway forwards to the backend service
+      "DownstreamPathTemplate": "/WeatherForecast",
+      "DownstreamScheme": "https",
+      // Backend service address
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost", // Backend service host
+          "Port": 7003 // Backend service port
+        }
+      ]
+    }
+
+    //TravelBlogAPI
+
+
+
+    // ChatbotAPI
+
+
+
+
+
+  ],
+
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:7777" // API Gateway base address
+  },
+
+  "DynamicRoutes": [],
+  "Aggregates": []
+}
