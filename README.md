@@ -10,9 +10,7 @@ EasySearch is a **microservices-based travel application** built as a Master's c
 
 EasySearch follows a **microservices architecture**, separating concerns into independent, loosely-coupled services that communicate through an API Gateway. This design allows for independent development, deployment, and scaling (both vertical and horizontal) of each service.
 
-### System Design Diagram
-
-![FrontEnd Design](./Proposal_First_Read/FrontEndInitalDesignV1.png)
+### Initial System Design Diagram
 
 ![BackEnd Design](./Proposal_First_Read/BackEndInitalDesignV1.png)
 
